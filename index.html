@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JOSE | V1 XD 🥷🏻</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<script>
+// ⚠ PON AQUÍ TU CONFIGURACIÓN DE FIREBASE
+var firebaseConfig = {
+  apiKey: "TU_API_KEY",
+  authDomain: "TU_AUTH_DOMAIN",
+  databaseURL: "TU_DATABASE_URL",
+  projectId: "TU_PROJECT_ID",
+};
+firebase.initializeApp(firebaseConfig);
+</script>
+</head>
+<body>
+
+<h1>🌌 Tic Tac Toe Galaxy Multiplayer ULTRA</h1>
+
+<div class="lobby">
+  <h2>Lobby Online</h2>
+
+  <input type="text" id="roomCode" placeholder="Código de sala">
+
+  <div class="buttons">
+    <button onclick="createRoom()">Crear Sala</button>
+    <button onclick="joinRoom()">Unirse</button>
+    <button onclick="leaveRoom()">Salir</button>
+  </div>
+
+  <p id="status"></p>
+
+  <div class="chat">
+    <div id="messages"></div>
+    <input type="text" id="chatInput" placeholder="Mensaje...">
+    <button onclick="sendMessage()">Enviar</button>
+  </div>
+</div>
+
+<div class="board" id="board">
+  <div class="cell" data-cell></div>
+  <div class="cell" data-cell></div>
+  <div class="cell" data-cell></div>
+  <div class="cell" data-cell></div>
+  <div class="cell" data-cell></div>
+  <div class="cell" data-cell></div>
+  <div class="cell" data-cell></div>
+  <div class="cell" data-cell></div>
+  <div class="cell" data-cell></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

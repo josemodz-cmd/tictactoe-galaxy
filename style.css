@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: white;
+  background: black;
+  overflow-x: hidden;
+}
+
+/* Fondo galaxia animado */
+body::before {
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, #1a0033, #000);
+  animation: galaxyMove 25s linear infinite;
+  z-index: -1;
+}
+
+@keyframes galaxyMove {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.board {
+  display: grid;
+  grid-template: repeat(3, 100px)/repeat(3, 100px);
+  gap: 5px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.lobby {
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
+  border-radius: 15px;
+  width: 320px;
+  margin: 20px auto;
+}
+
+.chat {
+  margin-top: 10px;
+  background: rgba(255,255,255,0.05);
+  padding: 10px;
+  border-radius: 10px;
+  height: 150px;
+  overflow-y: auto;
+}
+
+button {
+  padding: 8px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 6px;
+  border: none;
+}
